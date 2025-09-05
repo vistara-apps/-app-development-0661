@@ -1,5 +1,6 @@
 import React from 'react';
 import { Home, Scale, DollarSign } from 'lucide-react';
+import AuthButton from './AuthButton';
 
 const AppShell = ({ children, activeTab, onTabChange }) => {
   const tabs = [
@@ -13,9 +14,17 @@ const AppShell = ({ children, activeTab, onTabChange }) => {
       <div className="max-w-lg mx-auto px-4">
         {/* Header */}
         <header className="pt-8 pb-6">
-          <h1 className="text-2xl font-bold text-white text-center mb-2">
-            Pocket Legal
-          </h1>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex-1" />
+            <div className="flex-1 text-center">
+              <h1 className="text-2xl font-bold text-white">
+                Pocket Legal
+              </h1>
+            </div>
+            <div className="flex-1 flex justify-end">
+              <AuthButton />
+            </div>
+          </div>
           <p className="text-purple-200 text-center text-sm">
             Your rights and budget, at your fingertips
           </p>
