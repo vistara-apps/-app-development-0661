@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { AuthProvider } from './contexts/AuthContext';
 import AppShell from './components/AppShell';
 import Dashboard from './components/Dashboard';
 import LegalGuides from './components/LegalGuides';
@@ -76,9 +77,11 @@ function App() {
   };
 
   return (
-    <AppShell activeTab={activeTab} onTabChange={setActiveTab}>
-      {renderContent()}
-    </AppShell>
+    <AuthProvider>
+      <AppShell activeTab={activeTab} onTabChange={setActiveTab}>
+        {renderContent()}
+      </AppShell>
+    </AuthProvider>
   );
 }
 
